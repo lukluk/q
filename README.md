@@ -1,6 +1,7 @@
-# q
+# q (Qucumber)
 
 ## q is shell script collector
+![qcumber](https://pngimage.net/wp-content/uploads/2018/06/larry-the-cucumber-png-7.png "Mr. Qucumber")
 
 ## how to install
 
