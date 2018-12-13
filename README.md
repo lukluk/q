@@ -21,7 +21,7 @@ $ q new kubectl config current-context
 ````
 
 ```
-$ q new "kubectl get pods | awk '{print #1}' | grep %1 -m1"
+$ q new "kubectl exec  -it $(kubectl get pods | awk '{print #1}' | grep %1 -m1) -- bash"
 ```
 
 `#1 normalization from $1`
@@ -34,6 +34,13 @@ $ q new "kubectl get pods | awk '{print #1}' | grep %1 -m1"
 ```
 $ q cx
 asia-southeast1_demo-server
+```
+
+```
+$ q podexec
+> not enaugh arguments , args(1)
+$ q podexec util
+#<util-xsd-23xx>$
 ```
 
 ## WORKSPACE , coming soon 
