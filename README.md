@@ -22,6 +22,8 @@ $ q new kubectl config current-context
 
 ```
 $ q new "kubectl exec  -it $(kubectl get pods | awk '{print #1}' | grep %1 -m1) -- bash"
+> podexec {PRESS ENTER}
+> podexec created!
 ```
 
 `#1 normalization from $1`
