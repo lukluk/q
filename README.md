@@ -24,9 +24,9 @@ $ q new kubectl config current-context
 $ q new "kubectl get pods | awk '{print #1}' | grep %1 -m1"
 ```
 
-#1 normalization from $1
+`#1 normalization from $1`
 
-%1 represent argument (param) for script
+`%1 represent argument (param) for script`
 
 ### call script
 `q {NAME}`
