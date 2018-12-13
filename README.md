@@ -15,20 +15,18 @@ $ cd q && cp bin/* /usr/local/bin
 `q new {SCRIPT}`
 
 ```
-$ q new kubectl config current-context
-> cx {PRESS ENTER}
-> cx created!
+$ q new cx
+<vim> kubectl config current-context
 ````
 
-```
-$ q new "kubectl exec  -it $(kubectl get pods | awk '{print #1}' | grep %1 -m1) -- bash"
-> podexec {PRESS ENTER}
-> podexec created!
-```
+more examples:
 
-`#1 normalization from $1`
-
-`%1 represent argument (param) for script`
+```
+$ q new podname
+<vim> kubectl get pods | awk '{print $1}' | grep $1 -m1 
+$ q new podexec
+<vim> kubectl exec  -it $(q podname $1) -- bash
+```
 
 ### call script
 `q {NAME}`
