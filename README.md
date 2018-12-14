@@ -6,14 +6,14 @@
 ## how to install
 
 ```
-$ get clone https://github.com/lukluk/q.git
+$ git clone https://github.com/lukluk/q.git
 $ cd q && cp bin/* /usr/local/bin
 ```
 
 ## how to use
 
 ### set repo
-
+x
 `q repo {repo-ssh-uri}`
 
 example:
