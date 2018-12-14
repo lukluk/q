@@ -16,7 +16,7 @@ $ cd q && cp bin/* /usr/local/bin
 
 1. create new blank repo
 
-2. `$ q repo {repo-ssh-uri}`
+2. `$ q repo {repo-uri}`
 
 example:
 
