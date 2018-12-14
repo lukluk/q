@@ -13,7 +13,6 @@ $ cd q && cp bin/* /usr/local/bin
 ## how to use
 
 ### set repo
-x
 `q repo {repo-ssh-uri}`
 
 example:
