@@ -19,6 +19,9 @@ func preparation() string {
 	if _, err := os.Stat(HOME); os.IsNotExist(err) {
 		os.Mkdir(HOME, os.ModePerm)
 	}
+	d1 := []byte(".*")
+	gitIgnore := HOME + "/.gitignore"
+	_ = ioutil.WriteFile(gitIgnore, d1, 0644)
 	return HOME
 }
 
@@ -123,7 +126,7 @@ func main() {
 			fmt.Println("echo q repo {git uri}")
 			return
 		}
-		fmt.Println("cd " + basePath + " && git init && git remote add origin " + getArgs(1))
+		fmt.Println("cd " + basePath + " && git init && git remote add origin " + getArgs(1) + " && git pull")
 		return
 	}
 	if command == "pull" {
@@ -135,7 +138,11 @@ func main() {
 	}
 
 	if command == "push" {
-		fmt.Println("git gui")
+		if !exists(basePath + "/.git") {
+			fmt.Println("echo q repo {git uri}")
+			return
+		}
+		fmt.Println("cd " + basePath + " && git add --all && git pull -r origin master && git gui")
 		return
 	}
 
