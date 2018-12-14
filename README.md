@@ -64,8 +64,6 @@ $ q podexec util
 #<util-xsd-23xx>$
 ```
 
-## WORKSPACE
-
 ### list of scripts
 ```
 $ q
