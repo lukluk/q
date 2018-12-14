@@ -8,7 +8,6 @@ import (
 	"os/user"
 	"strconv"
 	"strings"
-	"time"
 )
 
 func preparation() string {
@@ -134,18 +133,21 @@ func main() {
 		}
 		fmt.Println("cd " + basePath + " && git pull origin master")
 	}
+
 	if command == "push" {
-		if !exists(basePath + "/.git") {
-			fmt.Println("echo q repo {git uri}")
+		fmt.Println("git gui")
+		return
+	}
+
+	if command == "remove" {
+		if getArgs(1) == "" {
+			fmt.Println("echo q remove {script-name}")
 			return
 		}
-		message := getArgs(1)
-		if message == "" {
-			t := time.Now()
-			message = "update at " + t.Format(time.RFC3339)
-		}
-		fmt.Println("cd " + basePath + " && git add --all && git commit -m \"" + message + "\" && git pull -r origin master && git push git push --set-upstream origin master")
+		fmt.Println("cd " + basePath + " && rm " + getArgs(1))
+		return
 	}
+
 	if command == "new" {
 		if getArgs(1) == "" {
 			fmt.Println("echo q new {script-name}")
