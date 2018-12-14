@@ -27,6 +27,15 @@ $ q new podname
 $ q new podexec
 <vim> kubectl exec  -it $(q podname $1) -- bash
 ```
+### create script with humanize param
+
+```
+$ q new hello
+<vim> echo <your-name> <your-email>
+$ q hello
+q hello your-name your-email
+$ q hello lukluk luklukaha@gmail.com
+```
 
 ### call script
 `q {NAME}`
@@ -43,32 +52,36 @@ $ q podexec util
 #<util-xsd-23xx>$
 ```
 
-## WORKSPACE , coming soon 
+## WORKSPACE
 
-### create team
+### list of scripts
+```
+$ q
+podexec
+podname
+cx
+```
+
+### set workspace repo
+
+`q repo {repo-ssh-uri}`
+
+example:
 
 ```
-$ q login
-> youremail@org.com
-> {enter-password}
-$ q new team
-> {enter-team-name}
-> created!
-> secret-key: blablabla 
+//read-write access
+$ q repo git@github.com:lukluk/repo-demo.git
+//read-only access
+$ q repo https://github.com/lukluk/repo-demo.git
 ```
 ### update collection
 
 ```
-$ q join team
-> {enter-team-name}
-> {enter-secret-key}
-$ q update
-> updated!
+$ q pull
 ```
 
 ### publish your script (share to team)
 
 ```
-$ q publish {script-name}
-> success!
+$ q push
 ```
