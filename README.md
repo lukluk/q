@@ -11,6 +11,20 @@ $ cd q && cp bin/* /usr/local/bin
 ```
 
 ## how to use
+
+### set repo
+
+`q repo {repo-ssh-uri}`
+
+example:
+
+```
+//read-write access
+$ q repo git@github.com:lukluk/repo-demo.git
+//read-only access
+$ q repo https://github.com/lukluk/repo-demo.git
+```
+
 ### create new script
 `q new {SCRIPT}`
 
@@ -60,18 +74,6 @@ podname
 cx
 ```
 
-### set workspace repo
-
-`q repo {repo-ssh-uri}`
-
-example:
-
-```
-//read-write access
-$ q repo git@github.com:lukluk/repo-demo.git
-//read-only access
-$ q repo https://github.com/lukluk/repo-demo.git
-```
 ### update collection
 
 ```
