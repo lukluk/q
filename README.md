@@ -1,7 +1,7 @@
-# q (Qucumber)
+# q (quali)
 
-## q is shell script collector
-![qcumber](https://sodapopstop.com/wp-content/uploads/2016/09/mr-q-cumber.png "Mr. Qucumber")
+## q is shell script repository
+![quali](https://gallery.kissclipart.com/20180829/qxe/kissclipart-cauldron-halloween-clipart-cauldron-halloween-clip-19b25e2dd7bbaa8a.jpg "")
 
 ## how to install
 
