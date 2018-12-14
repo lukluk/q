@@ -22,10 +22,8 @@ $ q new cx
 more examples:
 
 ```
-$ q new podname
-<vim> kubectl get pods | awk '{print $1}' | grep $1 -m1 
 $ q new podexec
-<vim> kubectl exec  -it $(q podname $1) -- bash
+<vim> kubectl exec  -it $(kubectl get pods | awk '{print $1}' | grep $1 -m1) -- bash
 ```
 ### create script with humanize param
 

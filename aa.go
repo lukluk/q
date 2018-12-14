@@ -116,7 +116,7 @@ func main() {
 	arg := os.Args[1:]
 
 	if len(arg) == 0 {
-		fmt.Print("echo 🥒 && ls -t " + basePath)
+		fmt.Print("echo 🥒 - list && ls -t " + basePath)
 		return
 	}
 
@@ -126,7 +126,7 @@ func main() {
 			fmt.Println("echo q repo {git uri}")
 			return
 		}
-		fmt.Println("cd " + basePath + " && git init && git remote add origin " + getArgs(1) + " && git pull")
+		fmt.Println("cd " + basePath + " && git init && git remote add origin " + getArgs(1) + " && git pull origin master && q")
 		return
 	}
 	if command == "pull" {
@@ -142,7 +142,7 @@ func main() {
 			fmt.Println("echo q repo {git uri}")
 			return
 		}
-		fmt.Println("cd " + basePath + " && git add --all && git pull -r origin master && git gui")
+		fmt.Println("cd " + basePath + " && git add --all && git gui")
 		return
 	}
 
