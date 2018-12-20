@@ -89,7 +89,7 @@ func validate(name string, path string, script string, argv []string) string {
 		return "echo not enaugh arguments ,  " + strconv.Itoa(reqArgsLen)
 	} else if lenHParams > len(argv) {
 		return "echo q " + name + " " + strings.Join(hParams, "  ")
-	} else if lenHParams == len(argv) {
+	} else if lenHParams <= len(argv) {
 		for i, param := range hParams {
 			script = strings.Replace(script, "<"+param+">", "$"+strconv.Itoa(i+1), -1)
 		}
@@ -116,7 +116,7 @@ func main() {
 	arg := os.Args[1:]
 
 	if len(arg) == 0 {
-		fmt.Print("echo 🥒 - list && ls -t " + basePath)
+		fmt.Print("echo 🥒🥒 - list && ls -t " + basePath)
 		return
 	}
 
